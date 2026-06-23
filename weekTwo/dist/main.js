@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var levels;
-(function (levels) {
-    levels[levels["kids"] = 15] = "kids";
-})(levels || (levels = {}));
-var hamada;
-(function (hamada) {
-    hamada[hamada["h"] = 15] = "h";
-})(hamada || (hamada = {}));
-console.log(hamada.h);
+const user = {
+    username: "Elzero",
+    age: 40,
+    website: "Elzero.org",
+    skills: {
+        frontEnd: ["HTML", "CSS", "JS"],
+        backEnd: ["PHP", "Python"],
+    },
+};
+// We Need To Remove Error From This Edits
+user.username = "Osama";
+user.age = "40";
+user.skills.backEnd.push(100);
 //# sourceMappingURL=main.js.map
