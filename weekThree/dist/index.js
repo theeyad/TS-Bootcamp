@@ -1,39 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class User {
+// Create Your Class Here
+class Player {
     id;
-    _userName;
-    age;
-    static _count = 0;
-    static get count() {
-        return User._count;
-    }
-    msg;
-    constructor(id, _userName, age) {
+    title;
+    level;
+    constructor(id, title, level) {
         this.id = id;
-        this._userName = _userName;
-        this.age = age;
-        this.msg = () => `Message from obj ${this.userName}`;
-        User._count++;
+        this.title = title;
+        this.level = level;
     }
-    sayMsg() {
-        return `Hello from obj`;
+    logIn() {
+        console.log("Logged In");
     }
-    get userName() {
-        return this._userName;
-    }
-    set userName(value) {
-        this._userName = value;
+    logOut(msg) {
+        console.log(`Logged Out, ${msg}`);
     }
 }
-let user = new User(100, "ali", 20);
-let user2 = new User(100, "ali", 20);
-let user3 = new User(100, "ali", 20);
-console.log(user.id);
-console.log(user.userName);
-user.userName = "Ahmed";
-console.log(user.userName);
-console.log(user.msg());
-console.log(user.sayMsg());
-console.log(User.count);
+let player1 = new Player(100, "Elzero", 95);
+console.log(player1.id); // 100
+console.log(player1.title); // "Elzero"
+console.log(player1.level); // 95
+player1.logIn(); // Logged In
+player1.logOut("Good Bye"); // Logged Out, Good Bye
 //# sourceMappingURL=index.js.map

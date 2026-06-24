@@ -1,39 +1,32 @@
-class User {
-  private static _count: number = 0;
-  public static get count(): number {
-    return User._count;
-  }
+interface Play {
+  id: number;
+  title: string;
+  level: number | string;
+  logIn(): void;
+  logOut(msg: string): void;
+}
 
-  msg: () => string;
+// Create Your Class Here
+class Player implements Play {
   constructor(
     public id: number,
-    private _userName: string,
-    private age: number,
-  ) {
-    this.msg = () => `Message from obj ${this.userName}`;
-    User._count++;
-  }
-  sayMsg(): string {
-    return `Hello from obj`;
+    public title: string,
+    public level: number,
+  ) {}
+
+  public logIn(): void {
+    console.log("Logged In");
   }
 
-  public get userName(): string {
-    return this._userName;
-  }
-  public set userName(value: string) {
-    this._userName = value;
+  public logOut(msg: string): void {
+    console.log(`Logged Out, ${msg}`);
   }
 }
 
-let user = new User(100, "ali", 20);
-let user2 = new User(100, "ali", 20);
-let user3 = new User(100, "ali", 20);
+let player1 = new Player(100, "Elzero", 95);
 
-console.log(user.id);
-console.log(user.userName);
-user.userName = "Ahmed";
-console.log(user.userName);
-console.log(user.msg());
-console.log(user.sayMsg());
-
-console.log(User.count);
+console.log(player1.id); // 100
+console.log(player1.title); // "Elzero"
+console.log(player1.level); // 95
+player1.logIn(); // Logged In
+player1.logOut("Good Bye"); // Logged Out, Good Bye
